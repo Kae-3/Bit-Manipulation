@@ -1,0 +1,18 @@
+print("Set and Clear Bits")
+
+number = int(input("Enter a non-negative number: "))
+position = int(input("Which bit position? (start counting at 0): "))
+
+mask = 1 << position
+
+print(f"\nNumber: {number} ({bin(number)[2:]})")
+print(f"Mask:   {mask} ({bin(mask)[2:]})")
+print(f"Set bit:   {number | mask} ({bin(number | mask)[2:]})")
+print(f"Clear bit: {number & ~mask} ({bin(number & ~mask)[2:]})")
+
+binary = bin(number)[2:]
+print(f"\n{number} in binary is {binary}.")
+if number > 0 and binary.count("1") == 1:
+    print("It is a power of 2: its binary form has one 1.")
+else:
+    print("It is not a power of 2.")
